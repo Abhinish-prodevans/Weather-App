@@ -1,0 +1,26 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "this is a Asyncronous weather app which is on Node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abhinish-prodevans/Weather-App.git"
+  },
+  "keywords": [
+    "Weather",
+    "app"
+  ],
+  "author": "Abhinish Raj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abhinish-prodevans/Weather-App/issues"
+  },
+  "homepage": "https://github.com/Abhinish-prodevans/Weather-App#readme",
+  "dependencies": {
+    "request": "^2.73.0"
+  }
+}
