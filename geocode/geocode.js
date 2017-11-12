@@ -4,10 +4,10 @@ var geocodeAddress = (address, callback) => {
 
     var encodedAddress = encodeURIComponent(address);
 
-    debugger;
+
     request ({url : `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`,
             json : true }
-        , (error,response,body) => {
+        ,(error,response,body) => {
 
             if(error){
                 console.log('Program is unable to connect to google servers');
@@ -25,11 +25,29 @@ var geocodeAddress = (address, callback) => {
                 console.log(`Latitude : ${body.results[0].geometry.location.lat}`);
                 console.log(`Longitude : ${body.results[0].geometry.location.lng}`);*/
             }
+            geocodeWeather(body.results[0].geometry.location.lat,body.results[0].geometry.location.lng)
         });
 
 
 }
 
+var geocodeWeather =(latitude,longitude) =>{
+
+    request({
+        url : `https://api.darksky.net/forecast/3084fb1d94753a8ddef8ec0b268d537f/${latitude},${longitude}`,
+        json: true
+    },(error,response,body) =>{
+        if(error){
+            console.log('Location not found');
+        }else{
+         console.log( `Temperature : ${body.currently.temperature}`)
+        }
+
+    })
+
+}
+
 module.exports = {
-    geocodeAddress
+    geocodeAddress,
+    geocodeWeather
 }
