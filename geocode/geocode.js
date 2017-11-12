@@ -40,7 +40,7 @@ var geocodeWeather =(latitude,longitude) =>{
         if(error){
             console.log('Location not found');
         }else{
-         console.log( `Temperature : ${body.currently.temperature}`)
+         console.log( `Temperature : ${body.daily.summary}`)
         }
 
     })
