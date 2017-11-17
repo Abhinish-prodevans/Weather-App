@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Abhinish-prodevans/Weather-App#readme",
   "dependencies": {
+    "axios": "^0.13.1",
     "install": "^0.10.1",
     "request": "^2.73.0",
     "yargs": "^4.8.1"
